@@ -20,8 +20,20 @@ dependencies = [
 [project.scripts]
 resumer-scraper = "resumer_scraper.cli.main:app"
 
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+]
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+  "integration: requires DATABASE_URL and a reachable Postgres instance",
+]

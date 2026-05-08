@@ -1,0 +1,8 @@
+{
+  "description": "Expected extraction from tests/fixtures/html/outside_ir35_jobs_list.html for planned Outside IR35 list selectors.",
+  "non_sponsored_job_hrefs": [
+    "/tech-jobs/senior-python-engineer-abc123",
+    "/tech-jobs/frontend-contractor-def456"
+  ],
+  "load_more_href": "/tech-jobs?p=2"
+}

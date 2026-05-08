@@ -1,0 +1,8 @@
+{
+  "description": "Expected extraction from tests/fixtures/html/quality_contracts_list.html for planned QC list selectors (real cards only).",
+  "contract_detail_hrefs": [
+    "/contracts/today/1001",
+    "/contracts/today/1002"
+  ],
+  "next_page_href": "/contracts/today?page=2"
+}

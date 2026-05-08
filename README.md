@@ -7,6 +7,7 @@ Scrapy-based ingestion platform scaffold with PostgreSQL persistence and Alembic
 1. Copy `.env.example` to `.env` and adjust values if needed.
 2. Create/update the project environment with `uv`:
    - `uv sync`
+   - For running tests, include dev dependencies: `uv sync --extra dev`
 3. Start local development DB:
    - `uv run python scripts/dev.py db up`
 
@@ -41,6 +42,20 @@ Database URL resolution for dev helpers:
 Default database settings:
 - Database name: `resumer_app`
 - Schema: `scraper`
+
+## Testing
+
+- Run the default suite (fast; no live Postgres required):
+  - `uv run pytest`
+- Run integration tests that need a reachable database (`DATABASE_URL`):
+  - `uv run pytest -m integration`
+
+Layout:
+
+- `tests/fixtures/html/` — static HTML samples for selector contracts
+- `tests/fixtures/snapshots/` — expected selector outputs (JSON)
+- `tests/support/` — shared extraction helpers used by snapshot tests
+- `tests/test_integration_database.py` — optional DB connectivity / schema checks
 
 ## Database and migrations
 
